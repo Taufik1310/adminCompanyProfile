@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Foundation\Auth\User as Authenticable;
+
+class Login extends Authenticable
+{
+    use HasApiTokens, HasFactory, Notifiable;
+
+    protected $table = 'tb_user';
+    protected $primaryKey = 'username';
+
+    protected $fillable = [
+        'username',
+        'password',
+    ];
+}
